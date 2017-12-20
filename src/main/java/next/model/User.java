@@ -28,8 +28,24 @@ public class User {
     public String getEmail() {
         return email;
     }
+    
+    public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-    @Override
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -66,4 +82,9 @@ public class User {
         return true;
     }
 
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
+	}
+    
 }
