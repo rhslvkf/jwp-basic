@@ -17,7 +17,7 @@ import next.model.User;
 
 @WebServlet("/user/update")
 public class UpdateUserFormServlet extends HttpServlet {
-
+	private static final long serialVersionUID = 1L;
 	private static final Logger log = LoggerFactory.getLogger(UpdateUserFormServlet.class);
 
 	@Override
@@ -30,7 +30,7 @@ public class UpdateUserFormServlet extends HttpServlet {
 		RequestDispatcher rd = req.getRequestDispatcher("/user/update.jsp");
 		rd.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User user = new User(req.getParameter("userId"), req.getParameter("password"), req.getParameter("name"),
