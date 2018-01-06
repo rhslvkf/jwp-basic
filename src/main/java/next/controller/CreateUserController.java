@@ -1,7 +1,5 @@
 package next.controller;
 
-import java.sql.SQLException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import core.mvc.Controller;
+import exception.DataAccessException;
 import next.dao.UserDao;
 import next.model.User;
 
@@ -24,7 +23,7 @@ public class CreateUserController implements Controller {
         UserDao userDao = new UserDao();
         try {
         	userDao.insert(user);
-        } catch (SQLException e) {
+        } catch (DataAccessException e) {
         	log.error(e.getMessage());
         }
         
